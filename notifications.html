@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - Car Checklist Management System</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>Car Checklist Management System</h1>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="notifications.html">Notifications</a></li>
+                        <li class="nav-item"><a class="nav-link" href="maintenance.html">Maintenance Requests</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+                <button class="btn btn-danger" onclick="logout()">Logout</button>
+            </nav>
+        </div>
+    </header>
+    <div class="content">
+        <div class="form-container" id="notificationsFormContainer">
+            <h2>Notifications</h2>
+            <ul id="notificationList">
+                <li class="list-group-item">2024-07-22 10:00: Front View - Online (Battery: 50%)</li>
+                <li class="list-group-item">2024-07-22 10:05: Rear View - Online (Battery: 65%)</li>
+                <li class="list-group-item">2024-07-22 10:10: Left View - Online (Battery: 58%)</li>
+                <li class="list-group-item">2024-07-22 10:15: Right View - Offline (Battery: Error)</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function logout() {
+            localStorage.removeItem('loggedInUser');
+            window.location.href = 'index.html';
+        }
+    </script>
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container text-center">
+            <span class="text-muted">© 2024 Car Checklist Management System by Serey Vath. All rights reserved.</span>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

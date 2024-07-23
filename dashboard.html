@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Car Checklist Management System</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>Car Checklist Management System</h1>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="notifications.html">Notifications</a></li>
+                        <li class="nav-item"><a class="nav-link" href="maintenance.html">Maintenance Requests</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+                <button class="btn btn-danger" onclick="logout()">Logout</button>
+            </nav>
+        </div>
+    </header>
+    <div class="content">
+        <div class="dashboard">
+            <div class="car-status">
+                <input type="text" id="search-bar" class="form-control" placeholder="Enter VIN or NFC Scan">
+                <div class="status-indicator status-online" style="top: 0%; left: 46%;" onclick="showDetails('Rear View', 'Online', '50%', '2024-07-21', '2024-01-10', 'image/rearview.png')">
+                    <span>Rear View</span>
+                </div>
+                <div class="status-indicator status-offline" style="top: 35%; right: 30%;" onclick="showDetails('Right View', 'Offline', 'Error', '2024-07-19', '2024-01-10', 'image/rightview.png')">
+                    <span>Right View</span>
+                </div>
+                <div class="status-indicator status-online" style="top: 35%; left: 30%;" onclick="showDetails('Left View', 'Online', '58%', '2024-07-21', '2024-01-10', 'image/leftview.png')">
+                    <span>Left View</span>
+                </div>
+                <div class="status-indicator status-online" style="bottom: 0%; right: 45%;" onclick="showDetails('Front View', 'Online', '50%', '2024-07-21', '2024-01-10', 'image/frontview.png')">
+                    <span>Front View</span>
+                </div>
+            </div>
+            <div class="details">
+                <h2>Car Specs</h2>
+                <p><strong>VIN Number:</strong> 12323454679819204596</p>
+                <p><strong>Brand:</strong> Tesla Model 3</p>
+                <p><strong>Battery Level:</strong> 60%</p>
+                <div class="camera-views">
+                    <h3>Camera Views</h3>
+                    <div class="camera-view">
+                        <img src="image/frontview.png" alt="Front View" class="img-fluid">
+                        <p>Front View</p>
+                        <p id="online">(Online)</p>
+                        <p> Battery: 50%</p>
+                        <hr>
+                    </div>
+                    <div class="camera-view">
+                        <img src="image/rearview.png" alt="Rear View" class="img-fluid">
+                        <p>Rear View</p>
+                        <p id="online">(Online)</p>
+                        <p> Battery: 65%</p>
+                        <hr>
+                    </div>
+                    <div class="camera-view">
+                        <img src="image/leftview.png" alt="Left View" class="img-fluid">
+                        <p>Left View</p>
+                        <p id="online">(Online)</p>
+                        <p> Battery: 58%</p>
+                        <hr>
+                    </div>
+                    <div class="camera-view">
+                        <img src="image/rightview.png" alt="Right View" class="img-fluid">
+                        <p>Right View</p>
+                        <p id="offline">(Offline)</p>
+                        <p> Battery: Error</p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="details" id="cameraDetails" style="display: none;">
+                <h2 id="cameraTitle"></h2>
+                <p><strong>Status:</strong> <span id="cameraStatus"></span></p>
+                <p><strong>Battery:</strong> <span id="cameraBattery"></span></p>
+                <p><strong>Last Activity:</strong> <span id="cameraActivity"></span></p>
+                <p><strong>Installation Date:</strong> <span id="cameraInstallation"></span></p>
+                <img id="cameraImage" src="" alt="Camera View" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container text-center">
+            <span class="text-muted">© 2024 Car Checklist Management System by Serey Vath. All rights reserved.</span>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script/dashboard.js"></script>
+</body>
+</html>
